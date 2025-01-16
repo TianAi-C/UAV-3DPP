@@ -111,11 +111,11 @@ while ~isempty(openList)
     [~, idx] = min([openList.f]);
     currentNode = openList(idx);
     path_show = Astar.reconstructPath(currentNode);
-    if size(path_show,1)>=4
-        [~,~,path_show] = Astar.calH(X,Y,Z, path_show);
-        Astar.plotFigure(startPos,goalPos,X,Y,Z,path_show);
-        pause(0.001);
-    end
+    % if size(path_show,1)>=4
+    %     [~,~,path_show] = Astar.calH(X,Y,Z, path_show);
+    %     Astar.plotFigure(startPos,goalPos,X,Y,Z,path_show);
+    %     pause(0.001);
+    % end
     % 如果当前节点是目标节点，则路径找到
     if isequal(currentNode.pos, goalPos)
         path = Astar.reconstructPath(currentNode);
